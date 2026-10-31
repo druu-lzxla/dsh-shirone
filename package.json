@@ -1,0 +1,46 @@
+{
+  "name": "dsh-lingo-pet",
+  "version": "0.1.0",
+  "description": "一只说日语的小东西，住在 DSH 页面里：它说、你看、不懂就点，过几天它换个句子再说一遍。",
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "assets",
+    "client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "check": "node tools/corpus.mjs ja.a2.tsv"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh-plugin",
+    "language-learning",
+    "japanese",
+    "desktop-pet"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-settings-plugins"
+      ]
+    }
+  }
+}

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
+  <defs>
+    <linearGradient id="fur" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fdf3e3"/>
+      <stop offset="1" stop-color="#f3ddbd"/>
+    </linearGradient>
+    <linearGradient id="scarf" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f19a5a"/>
+      <stop offset="1" stop-color="#d9773c"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 尾巴 -->
+  <path d="M178 168c22 6 34 -8 30 -26 -3 -14 -16 -20 -26 -14" fill="none" stroke="#e7cba4" stroke-width="13" stroke-linecap="round"/>
+  <path d="M178 168c22 6 34 -8 30 -26" fill="none" stroke="#f7e3c8" stroke-width="9" stroke-linecap="round"/>
+
+  <!-- 耳朵 -->
+  <path d="M78 108 L92 62 L118 98 Z" fill="url(#fur)" stroke="#e2c39a" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M162 108 L148 62 L122 98 Z" fill="url(#fur)" stroke="#e2c39a" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M90 92 L96 72 L108 94 Z" fill="#f6c9bd"/>
+  <path d="M150 92 L144 72 L132 94 Z" fill="#f6c9bd"/>
+
+  <!-- 身体 -->
+  <ellipse cx="120" cy="158" rx="66" ry="58" fill="url(#fur)" stroke="#e2c39a" stroke-width="3"/>
+
+  <!-- 脚 -->
+  <ellipse cx="94" cy="212" rx="20" ry="11" fill="#f7e3c8" stroke="#e2c39a" stroke-width="3"/>
+  <ellipse cx="146" cy="212" rx="20" ry="11" fill="#f7e3c8" stroke="#e2c39a" stroke-width="3"/>
+
+  <!-- 围巾 -->
+  <path d="M62 142c16 14 100 14 116 0l-4 20c-20 12-88 12-108 0z" fill="url(#scarf)" stroke="#c9662f" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M150 158c8 10 10 22 6 34l-16 -4c6 -10 6 -20 2 -30z" fill="url(#scarf)" stroke="#c9662f" stroke-width="2" stroke-linejoin="round"/>
+
+  <!-- 脸 -->
+  <ellipse cx="120" cy="120" rx="54" ry="46" fill="url(#fur)" stroke="#e2c39a" stroke-width="3"/>
+
+  <!-- 眼睛 -->
+  <ellipse cx="100" cy="118" rx="8.5" ry="10" fill="#2e2a28"/>
+  <ellipse cx="140" cy="118" rx="8.5" ry="10" fill="#2e2a28"/>
+  <circle cx="103" cy="114" r="3" fill="#fff"/>
+  <circle cx="143" cy="114" r="3" fill="#fff"/>
+
+  <!-- 腮红 -->
+  <ellipse cx="86" cy="136" rx="9" ry="5" fill="#f6b3a2" opacity=".75"/>
+  <ellipse cx="154" cy="136" rx="9" ry="5" fill="#f6b3a2" opacity=".75"/>
+
+  <!-- 嘴 -->
+  <path d="M112 134q8 8 16 0" fill="none" stroke="#8a6a4f" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- 胡须 -->
+  <path d="M64 120l-16 -4M64 128l-16 4M176 120l16 -4M176 128l16 4" stroke="#d9b98f" stroke-width="2.5" stroke-linecap="round"/>
+</svg>
