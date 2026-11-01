@@ -161,6 +161,12 @@ window.__ModuleLoader__.load({
           stats
             ? `今天已说 ${stats.used} 句（预算 ${stats.budget}）｜词账本 ${stats.words} 个｜语料 ${stats.corpus} 句`
             : ''),
+        stats && stats.effectiveLevel && stats.effectiveLevel !== stats.level
+          ? h('div', { className: 'lp-hint' }, `你选的是 ${stats.level}，语料目前只到 ${stats.effectiveLevel}，所以按 ${stats.effectiveLevel} 选`)
+          : null,
+        stats && stats.mix && Object.keys(stats.mix).length
+          ? h('div', { className: 'lp-hint' }, '最近 12 句：' + Object.entries(stats.mix).map(([k, v]) => `${k} ${v}`).join(' / '))
+          : null,
         paused ? h('div', { className: 'lp-hint' }, '当前静音中：' + new Date(stats.pausedUntil).toLocaleTimeString()) : null,
 
         h('div', { className: 'lp-btns' },
