@@ -46,7 +46,8 @@
     '.lp-word.lp-on{display:block}',
     '.lp-badge{position:absolute;right:-2px;top:-2px;font-size:12px;opacity:.75;display:none}',
     '.lp-root.lp-paused .lp-badge{display:block}',
-    '.lp-root.lp-paused img{filter:grayscale(.5) drop-shadow(0 6px 10px rgba(0,0,0,.2))}',
+    '.lp-root.lp-paused img{filter:grayscale(.2) opacity(.85)',
+    'drop-shadow(0 0 1px rgba(0,0,0,.3)) drop-shadow(0 6px 10px rgba(0,0,0,.2))}',
   ].join('')
 
   var style = document.createElement('style')
