@@ -1,13 +1,13 @@
-// dsh-lingo-pet —— 浏览器半边（设置 → 外语桌宠）
+// dsh-shirone —— 浏览器半边（设置 → 白音）
 
 window.__ModuleLoader__.load({
-  id: 'dsh-lingo-pet',
+  id: 'dsh-shirone',
   factory: (require) => {
     const React = require('react')
     const h = React.createElement
     const { useState, useEffect } = React
 
-    const API = '/dsh-lingo-pet'
+    const API = '/dsh-shirone'
 
     const CSS = [
       '.lp-set{display:flex;flex-direction:column;gap:14px;font-size:13px;line-height:1.6}',
@@ -104,7 +104,7 @@ window.__ModuleLoader__.load({
       const untilMidnight = Math.max(1, Math.round((new Date().setHours(24, 0, 0, 0) - Date.now()) / 60000))
 
       return h('div', { className: 'lp-set' },
-        h('h3', null, '外语桌宠'),
+        h('h3', null, '白音'),
         h('div', { className: 'lp-hint' }, '一只住在页面里、说日语的小东西。它不说话的时候，就是不在。'),
 
         h('div', { className: 'lp-row' },
@@ -184,7 +184,7 @@ window.__ModuleLoader__.load({
       inject: ['slots'],
       apply(ctx) {
         const style = document.createElement('style')
-        style.setAttribute('data-plugin-css', 'dsh-lingo-pet')
+        style.setAttribute('data-plugin-css', 'dsh-shirone')
         style.textContent = CSS
         document.head.appendChild(style)
         ctx.effect(() => () => style.remove())
@@ -192,7 +192,7 @@ window.__ModuleLoader__.load({
         const slots = (typeof ctx.get === 'function' ? ctx.get('slots') : undefined) || ctx.slots
         if (!slots) return
         slots.inject('settings.section', () => slots.register(
-          { name: 'settings.section', id: 'lingo-pet', order: 56, label: '外语桌宠' },
+          { name: 'settings.section', id: 'shirone', order: 56, label: '白音' },
           () => h(Panel),
         ))
       },

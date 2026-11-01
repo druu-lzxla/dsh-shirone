@@ -1,12 +1,12 @@
-// dsh-lingo-pet —— 页面里的宠物（纯 DOM，无依赖）
+// dsh-shirone —— 页面里的宠物（纯 DOM，无依赖）
 // 只做四件事：显示、拖、说、把交互报回宿主。
 
 ;(function () {
   'use strict'
-  if (window.__lingoPetInited) return
-  window.__lingoPetInited = true
+  if (window.__shironeInited) return
+  window.__shironeInited = true
 
-  var API = '/dsh-lingo-pet'
+  var API = '/dsh-shirone'
   var pos = { x: 0.86, y: 0.82 }
   var lastAt = 0
   var showGloss = 'hover'
@@ -51,7 +51,7 @@
   ].join('')
 
   var style = document.createElement('style')
-  style.setAttribute('data-plugin-css', 'dsh-lingo-pet')
+  style.setAttribute('data-plugin-css', 'dsh-shirone')
   style.textContent = css
   document.head.appendChild(style)
 

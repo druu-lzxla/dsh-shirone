@@ -5,7 +5,7 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 
 // DSH_HOME 指到临时目录，别碰真实配置
-process.env.DSH_HOME = mkdtempSync(join(tmpdir(), 'lingo-pet-'))
+process.env.DSH_HOME = mkdtempSync(join(tmpdir(), 'shirone-'))
 
 const routes = new Map()
 const hooks = []
@@ -41,17 +41,17 @@ function fakeRes() {
 }
 
 const call = async (path, req = {}) => {
-  const handler = routes.get('/dsh-lingo-pet' + path)
+  const handler = routes.get('/dsh-shirone' + path)
   assert.ok(handler, `路由不存在：${path}`)
   const res = fakeRes()
-  await handler({ method: 'GET', url: '/dsh-lingo-pet' + path, on() {}, ...req }, res)
+  await handler({ method: 'GET', url: '/dsh-shirone' + path, on() {}, ...req }, res)
   return res
 }
 
 test('插件能起来，路由齐全', () => {
   apply(ctx)
   for (const p of ['/config', '/poll', '/event', '/pause', '/widget.js', '/pet.svg']) {
-    assert.ok(routes.has('/dsh-lingo-pet' + p), p)
+    assert.ok(routes.has('/dsh-shirone' + p), p)
   }
 })
 
@@ -62,11 +62,11 @@ test('挂饰脚本被注入一次', () => {
   hook.fn(table)
   hook.fn(table)
   assert.equal(table.length, 1)
-  assert.ok(table[0].text.includes('/dsh-lingo-pet/widget.js'))
+  assert.ok(table[0].text.includes('/dsh-shirone/widget.js'))
 })
 
 test('poll 返回语料与配置', async () => {
-  const res = await call('/poll', { url: '/dsh-lingo-pet/poll?after=0' })
+  const res = await call('/poll', { url: '/dsh-shirone/poll?after=0' })
   assert.equal(res.status, 200)
   assert.equal(res.json.showGloss, 'hover')
   assert.equal(res.json.enabled, true)

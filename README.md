@@ -1,4 +1,4 @@
-# dsh-lingo-pet（外语桌宠）
+# dsh-shirone（白音）
 
 一只住在 DSH 页面里、**说日语**的小东西。
 
@@ -32,16 +32,16 @@
 dsh plugin --profile desktop add link:D:\大肥鱼\jpl-pet
 ```
 
-然后**重启一次 DSH**。重启后页面右下角出现宠物；设置 → **外语桌宠**。
+然后**重启一次 DSH**。重启后页面右下角出现宠物；设置 → **白音**。
 
 卸载：
 
 ```bash
-dsh plugin --profile desktop remove dsh-lingo-pet
+dsh plugin --profile desktop remove dsh-shirone
 ```
 
-> 手动装：把本目录放到 `%USERPROFILE%\.dsh\profiles\<profile>\node_modules\dsh-lingo-pet`，
-> 在 profile 的 `package.json` 的 `dsh.profile.bundles` 里加 `dsh-lingo-pet`。
+> 手动装：把本目录放到 `%USERPROFILE%\.dsh\profiles\<profile>\node_modules\dsh-shirone`，
+> 在 profile 的 `package.json` 的 `dsh.profile.bundles` 里加 `dsh-shirone`。
 > 改 `package.json` 一律存 **UTF-8 无 BOM**。
 
 ---
@@ -88,9 +88,9 @@ node tools/lemmatize.mjs corpus/b1.tsv corpus/b1.out.tsv
 
 | 文件 | 内容 |
 |---|---|
-| `~/.dsh/lingo-pet/config.json` | 设置 |
-| `~/.dsh/lingo-pet/state.json` | 词账本、今天说了几句、位置 |
-| `~/.dsh/lingo-pet/diag.log` | 加载与定时器诊断（出问题先看它） |
+| `~/.dsh/shirone/config.json` | 设置 |
+| `~/.dsh/shirone/state.json` | 词账本、今天说了几句、位置 |
+| `~/.dsh/shirone/diag.log` | 加载与定时器诊断（出问题先看它） |
 
 卸载插件不会删这些文件。
 

@@ -1,6 +1,6 @@
 {
-  "name": "dsh-lingo-pet",
-  "version": "0.1.0",
+  "name": "dsh-shirone",
+  "version": "0.2.0",
   "description": "一只说日语的小东西，住在 DSH 页面里：它说、你看、不懂就点，过几天它换个句子再说一遍。",
   "license": "MIT",
   "type": "module",
