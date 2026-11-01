@@ -21,7 +21,8 @@
   ],
   "scripts": {
     "test": "node --test",
-    "check": "node tools/corpus.mjs ja.a2.tsv"
+    "check": "node tools/corpus.mjs corpus/ja.a2.tsv corpus/ja.a2.core.tsv corpus/b1.tsv corpus/b2.tsv",
+    "build:corpus": "node tools/corpus.mjs corpus/ja.a2.tsv corpus/ja.a2.core.tsv corpus/b1.tsv corpus/b2.tsv --out assets/corpus/ja.jsonl"
   },
   "keywords": [
     "deepseek-harness",

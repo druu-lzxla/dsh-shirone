@@ -62,11 +62,19 @@ id	scene	level	text	gloss	words	reading	note
 - **每句超纲词 ≤ 1 个**（超纲 = 词的等级高于句子等级）
 - 全文不能有重复句子、重复 id
 
-跑：
+跑（在仓库根目录）：
 
 ```
-node tools/corpus.mjs sample.tsv
-node tools/corpus.mjs ja.a2.tsv ja.b1.tsv --out dist/ja.jsonl
+npm run check
+npm run build:corpus
+```
+
+等价于：
+
+```
+node tools/corpus.mjs corpus/examples/sample.tsv
+node tools/corpus.mjs corpus/ja.a2.tsv corpus/ja.a2.core.tsv corpus/b1.tsv corpus/b2.tsv \
+  --out assets/corpus/ja.jsonl
 ```
 
 有错会带行号，改完再跑；通过会打印等级分布、场景分布、词头覆盖（≥2 次 / ≥3 次各多少）。
@@ -110,17 +118,15 @@ node tools/corpus.mjs ja.a2.tsv ja.b1.tsv --out dist/ja.jsonl
 
 ## 5. 数量与结构（这才是"我需要多少"）
 
-| | 目标 | 说明 |
+| | 目标 | 现在 |
 |---|---|---|
-| 词头 | **200** | A2 100 / B1 70 / B2 30 |
-| 句子 | **450–600** | 平均每个词头 2–3 句 |
-| 核心词 | **60 个词头各 ≥ 3 句** | 这些是"反复出现"的主角，优先写 |
-| 场景覆盖 | 9 个场景都有 ≥ 20 句 | 否则某些时段会没话说 |
+| 句子 | 450–600 | **450**（A2 280 / B1 100 / B2 70） |
+| 词头 | 200+ | **339** |
+| 出现 ≥3 次的词 | 60+ | **103** |
+| 场景覆盖 | 9 个场景都有 ≥ 20 句 | 全部达标（return 26 最少） |
 
 > 30 句只能验证"能跑"，不能验证"能学"——词只出现一次，就没有复现。
-> 300 句能跑通学习闭环；500 句以上才有"它怎么老说这个词"的感觉。
-
-**第一批只要 100 条 A2。** 我这边跑校验、试装、看节奏，确认没问题再放开写 B1/B2——避免你写 500 条之后发现格式要改。
+> 下一步不是加量，是补两类：`ながら` 这类还没覆盖的句型，以及把"它看得见"的句子改写成习惯句（见 README 的已知限制）。
 
 ---
 
