@@ -20,7 +20,7 @@
     'transform:translate(-50%,-50%);user-select:none;-webkit-user-select:none;',
     'transition:opacity .2s;touch-action:none}',
     '.lp-root img{width:100%;height:100%;display:block;pointer-events:none;',
-    'filter:drop-shadow(0 6px 10px rgba(0,0,0,.28))}',
+    'filter:drop-shadow(0 0 1px rgba(0,0,0,.35)) drop-shadow(0 6px 10px rgba(0,0,0,.28))}',
     '.lp-root .lp-body{width:100%;height:100%;cursor:grab;position:relative;',
     'animation:lp-breathe 4.2s ease-in-out infinite}',
     '.lp-root.lp-drag .lp-body{cursor:grabbing}',
@@ -57,7 +57,7 @@
   var root = document.createElement('div')
   root.className = 'lp-root'
   root.innerHTML =
-    '<div class="lp-body"><img src="' + API + '/pet.svg" alt="">' +
+    '<div class="lp-body"><img src="' + API + '/pet.png" alt="">' +
     '<div class="lp-bubble"><div class="lp-text"></div><div class="lp-gloss"></div>' +
     '<div class="lp-word"></div></div>' +
     '<div class="lp-badge">z z</div></div>'
@@ -68,6 +68,14 @@
   var textEl = root.querySelector('.lp-text')
   var glossEl = root.querySelector('.lp-gloss')
   var wordEl = root.querySelector('.lp-word')
+
+  // 新图还没就位（或路由没重启）时，退回原来的占位 SVG，别显示裂图
+  var petImg = root.querySelector('.lp-body img')
+  petImg.addEventListener('error', function () {
+    if (petImg.dataset.fallback) return
+    petImg.dataset.fallback = '1'
+    petImg.src = API + '/pet.svg'
+  })
 
   function place() {
     root.style.left = pos.x * 100 + '%'

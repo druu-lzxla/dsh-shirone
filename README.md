@@ -112,10 +112,21 @@ lib/selector.js   选句 / 三桶配额 / 词账本（纯函数）
 assets/widget.js  页面里的宠物（纯 DOM）
 assets/corpus/    运行时语料（由 corpus/ 构建）
 client.js         设置页
-assets/pet.svg    形象（占位，可换）
+assets/pet.png    形象（512×512 透明 PNG）
+assets/pet.svg    旧占位图（pet.png 加载失败时兜底）
+design/           原图（不随包发布）
 ```
 
 `inject` 只要 `webServer` 和 `timer`，不依赖任何其他插件，也没有 npm 依赖。
+
+---
+
+## 换形象
+
+- 运行时用的是 `assets/pet.png`：**512×512、透明底、正方形**。
+- 直接覆盖同名文件即可，刷新页面就换（这个文件每次请求都重读，不用重启）。
+- 原图放 `design/`，别塞进 `assets/`（会跟着插件包发布）。
+- 以后要做表情差分（开心 / 困 / 被戳），再给同尺寸的 `pet-happy.png` 这种，我按状态切。
 
 ---
 
